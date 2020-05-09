@@ -35,12 +35,12 @@ $ docker-compose up --build
 
   ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/1.png)
 
--Now we need to connect to our postgres and in order to to that go to create -> server
-![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/2.png)
--this form will be displayed so that you can set your server name
-![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/3..PNG)
+- Now we need to connect to our postgres and in order to to that go to create -> server
+  ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/2.png)
+- this form will be displayed so that you can set your server name
+  ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/3..PNG)
 
--Now switch to connection tab and enter the infomation below
+- Now switch to connection tab and enter the infomation below
 
 > Note: db credentials (username:postres,password:postgres)
 
@@ -54,7 +54,7 @@ $ docker ps
 
 this will display all the running containers so that you can get the id of the container running pg image
 
--Now run:
+- Now run:
 
 ```
 $ docker inspect pg_containers_ID
