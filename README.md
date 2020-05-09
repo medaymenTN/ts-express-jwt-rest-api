@@ -46,7 +46,7 @@ $ docker-compose up --build
 
 ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/4.PNG)
 
-- the hostname as you can see is and IPV4 adress which could be found using docker command. In order to get the IPV4 adress tape these commands on your terminal
+- the hostname as you can see is an IPV4 adress which could be found using docker command. In order to get the IPV4 adress tape these commands on your terminal
 
 ```
 $ docker ps
