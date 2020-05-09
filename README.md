@@ -33,4 +33,6 @@ $ docker-compose up --build
 
 - pg admin default credentials : (email: pgadmin@example.com , password : admin)
 
+  ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/1.png)
+
 - your project will run on http://localhost:5000/
