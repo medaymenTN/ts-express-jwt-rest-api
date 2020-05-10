@@ -12,7 +12,7 @@ export class UserController {
    * path:
    *  /api/register:
    *    post:
-   *      summary: user regstration
+   *      summary: user registration
    *      tags: [users]
    *      parameters:
    *      - in: body
@@ -32,17 +32,16 @@ export class UserController {
    *
    */
   public async registerUser(req: Request, res: Response) {
-    const hashedPassword = bcrypt.hashSync(
-      req.body.password,
-      bcrypt.genSaltSync(10)
-    );
-    const user = User.findOne({ where: { username: req.body.username } });
+    const { username, password } = req.body;
+    const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+    const user = await User.findOne({ where: { username: req.body.username } });
+
     if (!user) {
-      const newUser = await User.create({
-        username: req.body.username,
-        password: hashedPassword,
-      });
-      return res.status(200).send({ newUser });
+      const newUser = new User();
+      newUser.username = username;
+      newUser.password = hashedPassword;
+      const response = await User.save(newUser);
+      return res.status(200).send({ response });
     }
 
     return res.status(200).send({ message: "user already exist" });
@@ -72,16 +71,14 @@ export class UserController {
    *
    */
   public authenticateUser(req: Request, res: Response, next: NextFunction) {
-    passport.authenticate("local", function (err, user, info) {
-      // no async/await because passport works only with callback ..
-      if (err) return next(err);
+    passport.authenticate("local", { session: false }, (err, user, info) => {
       if (!user) {
-        return res.status(401).json({ status: "error", code: "unauthorized" });
+        return res.status(401).json(info);
       } else {
-        const token = jwt.sign({ username: user.username }, `${JWT_SECRET}`);
-
-        return res.status(200).send({ token: token });
+        // generate a signed son web token with the contents of user object and return it in the response
+        const token = jwt.sign({ username: user.username }, String(JWT_SECRET));
+        return res.json({ user: { username: user.username }, token });
       }
-    });
+    })(req, res);
   }
 }

@@ -60,10 +60,9 @@ this will display all the running containers so that you can get the id of the c
 $ docker inspect pg_containers_ID
 ```
 
--- you can see now in the image below that we can get the IPV4 adress in the terminal
+- you can see now in the image below that we can get the IPV4 adress in the terminal
 
 - ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/3.PNG)
 
 - finally the dashboard will display your database details
-
-- ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/5.PNG)
+  ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/5.PNG)
