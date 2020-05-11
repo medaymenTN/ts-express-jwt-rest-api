@@ -1,0 +1,14 @@
+{
+    "Servers": {
+      "1": {
+        "Name": "ts express",
+        "Group": "medAymen",
+        "Port": 5432,
+        "Username": "postgres",
+        "Host": "postgres",
+        "SSLMode": "prefer",
+        "MaintenanceDB": "postgres"
+      }
+    }
+  }
+  

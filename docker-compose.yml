@@ -3,7 +3,7 @@ version: "3"
 services:
   app:
     container_name: express
-    restart: always
+    restart: unless-stopped
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -15,26 +15,42 @@ services:
     environment:
       NODE_ENV: development
     depends_on:
-      - postgres-db
+      - postgres
 
-  postgres-db:
-    image: postgres
+  postgres:
+    container_name: postgres
+    image: postgres:${POSTGRES_VERSION:-12}
     environment:
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_DB: my-database
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      PGDATA: /data/postgres
     volumes:
-      - /var/lib/postgresql/data
+      - postgres:/data/postgres
+      - "./postgres-assets/init.sql:/docker-entrypoint-initdb.d/init.sql"
     ports:
       - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
   pgadmin:
+    container_name: pgadmin
     image: dpage/pgadmin4
-    restart: always
-    depends_on:
-      - postgres-db
-    ports:
-      - 5050:80
-    ## you can change pgAdmin default username/password with below environment variables
     environment:
-      PGADMIN_DEFAULT_EMAIL: pgadmin@example.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin@example.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PG_DATABASE: postgres
+      PG_USER: ${POSTGRES_USER:-postgres}
+      PG_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    volumes:
+      - pgadmin:/root/.pgadmin
+      - "./postgres-assets/servers.json:/pgadmin4/servers.json"
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    networks:
+      - postgres
+    restart: unless-stopped
+    
+volumes:
+  postgres:
+  pgadmin:

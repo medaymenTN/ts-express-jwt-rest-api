@@ -1,0 +1,37 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  express
+  labels:
+    name:  express
+spec:
+  template:
+    metadata:
+      labels:
+        name:  express
+    spec:
+      containers:
+      - image:  kyouuma/express-demo
+        name:  express
+        env:
+        - name:  NODE_ENV
+          value:  development       
+        ports:
+        - containerPort:  5000
+          name:  express
+        resources:
+          requests:
+            cpu: "20m"
+            memory: "55M"
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+        livenessProbe:
+          httpGet:
+            path: /_status/healthz
+            port: 5000
+        readinessProbe:
+          httpGet:
+            path: /_status/healthz
+            port: 5000
+
