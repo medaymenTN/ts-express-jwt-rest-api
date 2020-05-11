@@ -23,7 +23,7 @@ $ npm install
 $ docker-compose up --build
 ```
 
-- Docker image will run the project on development enviroment
+- Docker image will run the project in development enviroment
 
 - Run node js using nodemon
 
@@ -45,7 +45,7 @@ $ docker-compose up --build
 
 - Now switch to connection tab and enter the infomation below
 
-> Note: db credentials (username:postres,password:postgres)
+> Note: db credentials (username:postgres,password:postgres)
 
 ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/4.PNG)
 
@@ -55,7 +55,7 @@ $ docker-compose up --build
 $ docker ps
 ```
 
-this will display all the running containers so that you can get the id of the container running pg image
+this will display all the running containers so that you can get the id of the container running postgres image
 
 - Now run:
 
