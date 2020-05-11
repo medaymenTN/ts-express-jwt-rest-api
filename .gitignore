@@ -6,3 +6,4 @@ tmp/
 temp/
 dist
 pgdata
+package-lock.json
