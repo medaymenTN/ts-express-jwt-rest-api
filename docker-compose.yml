@@ -29,26 +29,26 @@ services:
       - "./postgres-assets/init.sql:/docker-entrypoint-initdb.d/init.sql"
     ports:
       - "5432:5432"
-    networks:
-      - postgres
+    # networks:
+    #   - postgres
     restart: unless-stopped
 
-  pgadmin:
-    container_name: pgadmin
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin@example.com}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-      PG_DATABASE: postgres
-      PG_USER: ${POSTGRES_USER:-postgres}
-      PG_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
-    volumes:
-      - pgadmin:/root/.pgadmin
-      - "./postgres-assets/servers.json:/pgadmin4/servers.json"
-    ports:
-      - "${PGADMIN_PORT:-5050}:80"
-    networks:
-      - postgres
+  # pgadmin:
+  #   container_name: pgadmin
+  #   image: dpage/pgadmin4
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin@example.com}
+  #     PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+  #     PG_DATABASE: postgres
+  #     PG_USER: ${POSTGRES_USER:-postgres}
+  #     PG_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+  #   volumes:
+  #     - pgadmin:/root/.pgadmin
+  #     - "./postgres-assets/servers.json:/pgadmin4/servers.json"
+  #   ports:
+  #     - "${PGADMIN_PORT:-5050}:80"
+    # networks:
+    #   - postgres
     restart: unless-stopped
     
 volumes:
