@@ -2,17 +2,17 @@
   "type": "postgres",
   "host": "postgres",
   "port": 5432,
-  "username": "user",
-  "password": "user&2020",
+  "username": "postgres",
+  "password": "postgres",
   "database": "my_database",
   "synchronize": true,
   "logging": false,
-  "entities": ["src/entity/**/*"],
-  "migrations": ["src/migration/**/*"],
-  "subscribers": ["src/subscriber/**/*"],
+  "entities": ["dist/src/entity/**/*"],
+  "migrations": ["dist/src/migration/**/*"],
+  "subscribers": ["dist/src/subscriber/**/*"],
   "cli": {
-    "entitiesDir": "src/entity",
-    "migrationsDir": "src/migration",
-    "subscribersDir": "src/subscriber"
+    "entitiesDir": "dist/src/entity",
+    "migrationsDir": "dist/src/migration",
+    "subscribersDir": "dist/src/subscriber"
   }
 }

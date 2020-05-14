@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon -L src/index.ts",
     "dev:debug": "nodemon --inspect src/index.ts",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "start": "ts-node dist/index.js",
     "build": "tsc -p ."
   },

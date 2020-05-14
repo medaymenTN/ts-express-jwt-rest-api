@@ -1,6 +1,6 @@
-FROM node:lts-buster-slim as ourabi
+FROM node:lts-buster-slim as build
 
-RUN mkdir /home/node/app/ && chown -R node:node /home/node/app
+RUN mkdir /home/node/app/ && chown -R node:node /home/node/app 
 
 WORKDIR /home/node/app
 
@@ -8,6 +8,7 @@ COPY --chown=node:node package*.json ./
 USER node
 
 RUN npm install --only=production && npm cache clean --force --loglevel=error
+
 RUN npm install typescript
 
 COPY --chown=node:node . .
@@ -20,7 +21,7 @@ RUN mkdir /home/node/app/ && chown -R node:node /home/node/app
 
 WORKDIR /home/node/app
 
-COPY --from=ourabi --chown=node:node  /home/node/app/ .
+COPY --from=build --chown=node:node  /home/node/app/ .
 
 USER node
 
