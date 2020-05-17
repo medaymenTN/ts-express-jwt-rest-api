@@ -41,13 +41,13 @@ $ docker-compose up --build
 
 -   this form will be displayed so that you can set your server name
 
-    ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/3..png)
+    ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/3..PNG)
 
 -   Now switch to connection tab and enter the infomation below
 
 > Note: db credentials (username:postgres,password:postgres)
 
-![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/4.png)
+![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/4.PNG)
 
 -   the hostname as you can see is an IPV4 adress which could be found using docker command. In order to get the IPV4 adress tape these commands on your terminal
 
@@ -65,7 +65,7 @@ $ docker inspect pg_containers_ID
 
 -   you can see now in the image below that we can get the IPV4 adress in the terminal
 
--   ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/3.png)
+-   ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/3.PNG)
 
 -   finally the dashboard will display your database details
-    ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/5.png)
+    ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/5.PNG)
