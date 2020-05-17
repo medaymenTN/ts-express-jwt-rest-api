@@ -23,9 +23,11 @@ WORKDIR /home/node/app
 
 COPY --from=build --chown=node:node  /home/node/app/ .
 
+COPY ormconfig.docker.json ./ormconfig.json
+
 USER node
 
 EXPOSE 5000
 
-CMD ["node","dist/index.js"]
+CMD ["npm","run","start:prod"]
 

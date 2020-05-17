@@ -7,12 +7,12 @@
   "database": "my_database",
   "synchronize": true,
   "logging": false,
-  "entities": ["dist/src/entity/**/*"],
-  "migrations": ["dist/src/migration/**/*"],
-  "subscribers": ["dist/src/subscriber/**/*"],
+  "entities": ["src/entity/**/*"],
+  "migrations": ["src/migration/**/*"],
+  "subscribers": ["src/subscriber/**/*"],
   "cli": {
-    "entitiesDir": "dist/src/entity",
-    "migrationsDir": "dist/src/migration",
-    "subscribersDir": "dist/src/subscriber"
+    "entitiesDir": "src/entity",
+    "migrationsDir": "src/migration",
+    "subscribersDir": "src/subscriber"
   }
 }
