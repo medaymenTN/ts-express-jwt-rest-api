@@ -1,6 +1,6 @@
 # JWT-REST api boilerplate
 
-#### A REST based solution made with Nodejs,Typescript,Express,TypeORM,Passport,Docker,SwaggerUI,postgresSQL
+#### A REST based solution made with Nodejs,Typescript,Express,TypeORM,Passport,Docker,ApiDocs,postgresSQL
 
 ## Requirments
 
@@ -27,27 +27,29 @@ $ docker-compose up --build
 
 -   Run node js using nodemon
 
--   Swagger-ui will be displayed on http://localhost:5000/swagger-ui
+-   API Docs will be displayed on http://localhost:5000/docs<br/>
+
+![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/6.png)<br/>
 
 -   pg admin ui will be displayed on http://localhost:5050/
 
--   pg admin default credentials : (email: pgadmin@example.com , password : admin)
+-   pg admin default credentials : (email: pgadmin@example.com , password : admin)<br/>
 
-    ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/1.png)
+    ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/1.png)<br/>
 
--   Now we need to connect to our postgres and in order to do that go to create -> server
+-   Now we need to connect to our postgres and in order to do that go to create -> server<br/>
 
-    ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/2.png)
+    ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/2.png)<br/>
 
--   this form will be displayed so that you can set your server name
+-   this form will be displayed so that you can set your server name<br/>
 
-    ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/3..png)
+    ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/3..png)<br/>
 
--   Now switch to connection tab and enter the infomation below
+-   Now switch to connection tab and enter the infomation below<br/>
 
-> Note: db credentials (username:postgres,password:postgres)
+> Note: db credentials (username:postgres,password:postgres)<br/>
 
-![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/4.png)
+![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/4.png)<br/>
 
 -   the hostname as you can see is an IPV4 adress which could be found using docker command. In order to get the IPV4 adress tape these commands on your terminal
 
@@ -63,9 +65,10 @@ this will display all the running containers so that you can get the id of the c
 $ docker inspect pg_containers_ID
 ```
 
--   you can see now in the image below that we can get the IPV4 adress in the terminal
+-   you can see now in the image below that we can get the IPV4 adress in the terminal<br/>
 
--   ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/3.png)
+![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/3.png)<br/>
 
--   finally the dashboard will display your database details
-    ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/5.png)
+-   finally the dashboard will display your database details<br/>
+
+    ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/5.png)<br/>
