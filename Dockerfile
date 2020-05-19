@@ -1,8 +1,12 @@
-FROM node:lts-buster-slim as build
+# ---------- Base ----------
+FROM node:lts-buster-slim as base
 
 RUN mkdir /home/node/app/ && chown -R node:node /home/node/app 
 
 WORKDIR /home/node/app
+
+# ---------- Build ----------
+FROM base as build
 
 COPY --chown=node:node package*.json ./
 
@@ -16,11 +20,8 @@ COPY --chown=node:node . .
 
 RUN npm run build 
 
-FROM node:lts-buster-slim
-
-RUN mkdir /home/node/app/ && chown -R node:node /home/node/app
-
-WORKDIR /home/node/app
+# ---------- Release ----------
+FROM build AS release
 
 COPY --from=build --chown=node:node  /home/node/app/ .
 

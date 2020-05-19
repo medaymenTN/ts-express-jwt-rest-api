@@ -20,10 +20,10 @@ $ npm install
 -   under your project directory execute this command
 
 ```
-$ docker-compose up --build
+$ bash ./scripts/script-dev.sh
 ```
 
--   Docker image will run the project in development enviroment
+Docker image will run the project in development enviroment
 
 -   Run node js using nodemon
 
@@ -72,3 +72,15 @@ $ docker inspect pg_containers_ID
 -   finally the dashboard will display your database details<br/>
 
     ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/5.PNG)<br/>
+
+## Running in production enviroment
+
+-   under your project directory execute this command
+
+```
+$ bash ./scripts/script-prod.sh
+```
+
+-Docker will execute a multistage build and run the required images in detached mode for production enviroment
+
+-   API Docs will be displayed on http://YOUR_DOMAIN_NAME/docs<br/>
