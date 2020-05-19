@@ -27,7 +27,7 @@ Docker image will run the project in development enviroment
 
 -   Run node js using nodemon
 
--   API Docs will be displayed on http://localhost:5000/docs<br/>
+-   API Docs will be displayed on http://localhost:5000/api/docs<br/>
 
 ![Test Image 7](https://github.com/medaymenTN/ts-express-jwt-rest-api/blob/master/docs/6.png)<br/>
 
@@ -83,4 +83,4 @@ $ bash ./scripts/script-prod.sh
 
 -Docker will execute a multistage build and run the required images in detached mode for production enviroment
 
--   API Docs will be displayed on http://YOUR_DOMAIN_NAME/docs<br/>
+-   API Docs will be displayed on http://localhost:5000/api/docs<br/>
